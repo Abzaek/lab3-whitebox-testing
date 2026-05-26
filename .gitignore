@@ -50,3 +50,9 @@ env/
 # Docs build
 site/
 _book/
+
+# Generated run artifacts (regenerate via scripts/)
+activity2-coverage/coverage_output.txt
+activity2-coverage/coverage.xml
+activity4-mutation/mutation_output.txt
+activity5-junit/mvn_output.txt

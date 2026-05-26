@@ -1,0 +1,45 @@
+======================================================================
+MUTATION TESTING RUNNER
+======================================================================
+
+>>> Verifying original calculator passes all tests...
+    ✅ All tests pass on original code.
+
+>>> Testing mutant_1 (Arithmetic Operator Change)...
+    Changed add (+) to subtract (-)
+    ❌ Mutant mutant_1: KILLED (tests detected the mutation)
+
+>>> Testing mutant_2 (Operator Swap)...
+    Changed multiply (*) to divide (/)
+    ❌ Mutant mutant_2: KILLED (tests detected the mutation)
+
+>>> Testing mutant_3 (Off-by-One / Boundary)...
+    Changed exponent b to b + 1 in power()
+    ❌ Mutant mutant_3: KILLED (tests detected the mutation)
+
+>>> Testing mutant_4 (Relational Operator Change)...
+    Changed b == 0 to b <= 0 in divide()
+    ❌ Mutant mutant_4: KILLED (tests detected the mutation)
+
+>>> Testing mutant_5 (Condition Negation)...
+    Changed b == 0 to b != 0 in modulo()
+    ❌ Mutant mutant_5: KILLED (tests detected the mutation)
+
+======================================================================
+MUTATION TESTING RESULTS
+======================================================================
+
+Mutant       Type                           Killed?    Test Evidence
+----------------------------------------------------------------------
+mutant_1     Arithmetic Operator Change     ✅ YES      test_mutation.py::TestCalculator::test_add_positive_numbers 
+mutant_2     Operator Swap                  ✅ YES      test_mutation.py::TestCalculator::test_multiply_basic FAILED
+mutant_3     Off-by-One / Boundary          ✅ YES      test_mutation.py::TestCalculator::test_power_basic FAILED   
+mutant_4     Relational Operator Change     ✅ YES      test_mutation.py::TestCalculator::test_divide_negative_divis
+mutant_5     Condition Negation             ✅ YES      test_mutation.py::TestCalculator::test_modulo_basic FAILED  
+
+----------------------------------------------------------------------
+Total Mutants:     5
+Killed:            5
+Survived:          0
+Mutation Score:    100.0%
+----------------------------------------------------------------------

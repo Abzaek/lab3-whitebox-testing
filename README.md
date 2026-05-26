@@ -31,7 +31,8 @@ lab3-whitebox-testing/
 │
 ├── activity1-cfg/                  # CFG, cyclomatic complexity, path testing
 │   ├── factorial.py                # Recursive factorial function
-│   ├── cfg_diagram.md              # Mermaid CFG diagram (E=7, N=6, C=3)
+│   ├── cfg_diagram.png             # Rendered CFG diagram (E=7, N=6, C=3)
+│   ├── cfg_diagram.md              # Mermaid CFG source
 │   ├── complexity.py               # Cyclomatic complexity calculator
 │   ├── test_factorial.py           # Path-based test cases
 │   └── README.md                   # Activity documentation
@@ -46,7 +47,8 @@ lab3-whitebox-testing/
 │   ├── dataflow_program.py         # GCD function with def/use points
 │   ├── du_analysis.py              # Programmatic DU analysis (12 pairs)
 │   ├── test_dataflow.py            # All-defs, all-DU-pairs, all-DU-paths
-│   ├── du_diagram.md               # Mermaid data flow diagram
+│   ├── du_diagram.png              # Rendered data flow diagram
+│   ├── du_diagram.md               # Mermaid data flow source
 │   └── README.md
 │
 ├── activity4-mutation/             # Mutation testing
@@ -71,13 +73,48 @@ lab3-whitebox-testing/
 │           └── CalculatorTest.java # 45 tests, 9 @Nested classes
 │
 ├── docs/
+│   ├── Lab3_Test_Documentation.pdf # ★ Consolidated test documentation (main deliverable)
 │   ├── submission_guide.md         # How to package and submit
 │   └── grading_checklist.md        # Full 20-point rubric mapping
 │
+├── reports/                        # Result screenshots (coverage, mutation, JUnit)
+│   ├── coverage_report.png
+│   ├── mutation_report.png
+│   └── junit_report.png
+│
+├── scripts/                        # Artifact generators (diagrams, PDF, packaging)
+│   ├── generate_diagrams.py
+│   ├── generate_report_images.py
+│   ├── generate_pdf.py
+│   └── package_submission.py
+│
+├── submission/                     # Categorized deliverables (source/diagrams/docs/reports)
+├── Lab3_WhiteBox_Testing_Abdulazez_Zeinu_Ali.zip   # ★ Final submission archive
 ├── requirements.txt                # Python dependencies
 ├── .gitignore                      # Comprehensive ignore rules
 ├── PLAN.md                         # Implementation plan
 └── README.md                       # This file
+```
+
+## Submission Deliverables
+
+The graded deliverables are packaged in **`Lab3_WhiteBox_Testing_Abdulazez_Zeinu_Ali.zip`**
+(and mirrored in the `submission/` folder), organized to match the assignment's required format:
+
+| Category | Location | Contents |
+|----------|----------|----------|
+| **Test documentation** | `documentation/Lab3_Test_Documentation.pdf` | Full PDF covering all 5 activities |
+| **Source code** | `source-code/activity{1..5}/` | Runnable `.py` and `.java` files |
+| **Diagrams** | `diagrams/` | CFG (Activity 1) and DU graph (Activity 3) as PNGs |
+| **Coverage / mutation reports** | `reports/` | Result screenshots, HTML coverage, JUnit Surefire reports |
+
+To regenerate every artifact from source:
+
+```bash
+python scripts/generate_diagrams.py        # CFG + DU PNGs
+python scripts/generate_report_images.py   # coverage/mutation/JUnit screenshots
+python scripts/generate_pdf.py             # consolidated PDF
+python scripts/package_submission.py        # build submission/ + ZIP
 ```
 
 ---
